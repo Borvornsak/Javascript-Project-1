@@ -4,18 +4,15 @@ var app = express();
 //serving static file
 app.use(express.static('public'));
 
+//send index.htm
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
 })
 
-app.get('/process_get', function (req, res) {
+//send prefixfree.js
+app.get('/prefixfree.js', function (req, res) {
    // Prepare output in JSON format
-   response = {
-      first_name:req.query.first_name,
-      last_name:req.query.last_name
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
+   res.sendFile( __dirname + "/" + "prefixfree.js" );
 })
 
 // This responds with "Hello World" on the homepage
