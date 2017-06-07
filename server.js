@@ -15,15 +15,15 @@ app.get('/prefixfree.js', function (req, res) {
    res.sendFile( __dirname + "/" + "prefixfree.js" );
 })
 
+//send style.css
 app.get('/style.css', function (req, res) {
    // Prepare output in JSON format
    res.sendFile( __dirname + "/" + "style.css" );
 })
 
-// This responds with "Hello World" on the homepage
+//redirect to '/index.htm'
 app.get('/', function (req, res) {
-   console.log("Got a GET request for the homepage");
-   res.send('Hello GET');
+   res.redirect('/index.htm');
 })
 
 var server = app.listen(8081, function () {
